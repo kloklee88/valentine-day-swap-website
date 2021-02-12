@@ -1,12 +1,12 @@
 <div class="content" role="main">
-  <div class="utility-container"><button (click)="initialize()">initialize</button></div>
-    <div class="utility-container"><button (click)="shuffle()">Shuffle</button></div>
-    <div class="card-container">
-      <div *ngFor="let pair of pairs; let i = index">
-        <a class="card" (click)="playerClick(pair.sender)">
-          <h1 class="player-name">{{pair.sender}}</h1>
-          <img class="heart-svg" src="assets/svg/heart.svg" height="140px" width="auto">
-        </a>
-      </div>
+  <div class="utility-container"><button class="btn btn-danger" (click)="shuffle()">Shuffle Sender and
+      Recipients</button></div>
+  <div class="card-container">
+    <div *ngFor="let pair of pairs; let i = index">
+      <a class="card" (click)="playerClick(pair.sender)">
+        <h1 class="player-name">{{pair.sender}}</h1>
+        <img class="heart-svg" src="assets/svg/heart.svg" height="140px" width="auto">
+      </a>
     </div>
   </div>
+</div>

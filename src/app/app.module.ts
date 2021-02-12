@@ -8,13 +8,15 @@ import { Globals } from './global';
 import { ResultComponent } from './result/result.component';
 import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { AdminComponent } from './admin/admin.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     ResultComponent,
-    HomeComponent
+    HomeComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

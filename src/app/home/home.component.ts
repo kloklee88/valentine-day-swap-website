@@ -48,9 +48,7 @@ export class HomeComponent implements OnInit {
   Math: Math = Math;
 
   constructor(
-    private globals: Globals,
     private modalService: NgbModal,
-    private http: HttpClient,
     private globalService: GlobalService) { }
 
   ngOnInit(): void {
@@ -65,10 +63,6 @@ export class HomeComponent implements OnInit {
   shuffle() {
     this.globalService.shufflePlayers();
     this.loadData();
-  }
-
-  initialize() {
-    this.globalService.initializeData();
   }
 
   loadData() {
