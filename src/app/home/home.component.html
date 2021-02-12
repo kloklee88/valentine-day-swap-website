@@ -1,10 +1,11 @@
 <div class="content" role="main">
-    <!-- <div class="utility-container"><button (click)="shufflePlayers()">Shuffle</button></div> -->
+  <div class="utility-container"><button (click)="initialize()">initialize</button></div>
+    <div class="utility-container"><button (click)="shuffle()">Shuffle</button></div>
     <div class="card-container">
       <div *ngFor="let pair of pairs; let i = index">
         <a class="card" (click)="playerClick(pair.sender)">
-          <h1 class="present-name">{{pair.sender}}</h1>
-          <img class="present-img" src="assets/img/heart-clear.png" height="150px" width="auto">
+          <h1 class="player-name">{{pair.sender}}</h1>
+          <img class="heart-svg" src="assets/svg/heart.svg" height="140px" width="auto">
         </a>
       </div>
     </div>

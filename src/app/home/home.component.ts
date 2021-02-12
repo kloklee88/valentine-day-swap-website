@@ -1,8 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Globals } from '../global';
 import { GlobalService } from '../global.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'ngbd-modal-content',
@@ -25,7 +27,8 @@ import { GlobalService } from '../global.service';
 export class NgbdModalContent {
   @Input() name;
 
-  constructor(public activeModal: NgbActiveModal,
+  constructor(
+    public activeModal: NgbActiveModal,
     private router: Router
   ) { }
 
@@ -41,19 +44,47 @@ export class NgbdModalContent {
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  pairs = this.globals.pairs
+  pairs;
   Math: Math = Math;
 
   constructor(
     private globals: Globals,
-    private modalService: NgbModal) { }
+    private modalService: NgbModal,
+    private http: HttpClient,
+    private globalService: GlobalService) { }
 
   ngOnInit(): void {
-
+    this.loadData();
   }
 
   playerClick(sender) {
     const modalRef = this.modalService.open(NgbdModalContent);
     modalRef.componentInstance.name = sender;
+  }
+
+  shuffle() {
+    this.globalService.shufflePlayers();
+    this.loadData();
+  }
+
+  initialize() {
+    this.globalService.initializeData();
+  }
+
+  loadData() {
+    this.globalService.getData()
+    .pipe(map(responseData => {
+        console.log(responseData);
+        const postArray = []
+        for (const key in responseData) {
+            postArray.push(responseData[key]);
+        }
+        console.log("Data loading...");
+        console.log(postArray);
+        return postArray;
+    }))
+    .subscribe(players => {
+      this.pairs = players[0]; //only one item right now
+    });
   }
 }

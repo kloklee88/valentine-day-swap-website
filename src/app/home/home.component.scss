@@ -67,6 +67,10 @@
     color: #FFBBC1;
   }
 
+  a:hover .heart-svg {
+    filter: brightness(0) saturate(100%) invert(73%) sepia(12%) saturate(836%) hue-rotate(306deg) brightness(102%) contrast(115%);
+  }
+
   .actual-img {
     height: 156px;
     width: auto;
