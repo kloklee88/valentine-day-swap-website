@@ -12,7 +12,7 @@
                 Recipients</button>
             <br />
             <br />
-            <h4 *ngIf="response">{{response}}</h4>
+            <ngb-alert #selfClosingAlert [dismissible]="false" type="success" *ngIf="response">{{response}}</ngb-alert>
         </div>
     </div>
 </div>

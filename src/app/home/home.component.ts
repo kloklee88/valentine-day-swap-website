@@ -16,7 +16,7 @@ import { map } from 'rxjs/operators';
       </button>
     </div>
     <div class="modal-body">
-      <p>Hello, <b>{{name}}</b>, are you sure you want to continue to find out your Valentine Day Swap partner?</p>
+      <p>Hello <b>{{name}}</b>, are you sure you want to find out your Valentine Day Swap partner?</p>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-outline-dark" (click)="goToResult(name)">Continue</button>
