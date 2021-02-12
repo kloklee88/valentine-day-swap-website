@@ -1,3 +1,10 @@
 <div class="content" role="main">
-    <div class="utility-container"><button class="btn btn-danger" (click)="initialize()">Initialize</button></div>
+    <div class="utility-container">
+        <div class="form-group">
+            <label for="playerNames">Please use commas between names</label>
+            <textarea [(ngModel)]="playerNames" id="playerNames" name="playerNames" class="players form-control"
+                cols="50" rows="5" required></textarea>
+            <button class="btn btn-danger" (click)="initialize()">Initialize</button>
+        </div>
+    </div>
 </div>

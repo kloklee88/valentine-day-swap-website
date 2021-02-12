@@ -15,11 +15,8 @@ export class GlobalService {
         private http: HttpClient) { }
 
     postData(postData) {
-        this.http.post('https://valentine-day-swap-default-rtdb.firebaseio.com/pairs.json', postData)
-            .subscribe(responseData => {
-                console.log("Posting data...");
-                console.log(responseData);
-            });
+        console.log("Posting data...");
+        return this.http.post('https://valentine-day-swap-default-rtdb.firebaseio.com/pairs.json', postData)
     }
 
     getData() {
@@ -32,15 +29,8 @@ export class GlobalService {
         return this.http.delete('https://valentine-day-swap-default-rtdb.firebaseio.com/pairs.json')
     }
 
-    initializeData() {
-        this.deleteData().subscribe(() => {
-            this.postData(this.pairs);
-        })
-    }
-
-    shufflePlayers() {
-        console.log("Shuffling players");
-        this.getData()
+    getSendersOnly() {
+        return this.getData()
             .pipe(map(responseData => {
                 console.log(responseData);
                 const postArray = []
@@ -59,13 +49,20 @@ export class GlobalService {
                 //console.log(postArray);
                 return postArray;
             }))
+    }
+
+    shufflePlayers() {
+        console.log("Shuffling players");
+        this.getSendersOnly()
             .subscribe(players => {
                 console.log("Filtered GET data");
                 console.log(players);
                 //Do secret santa algorithm
                 let result = this.secretSanta(players);
                 this.deleteData().subscribe(() => {
-                    this.postData(result);
+                    this.postData(result).subscribe(responseData => {
+                        console.log(responseData);
+                    });
                 });
             });
     }
