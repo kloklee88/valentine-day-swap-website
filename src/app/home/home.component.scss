@@ -2,7 +2,7 @@
     display: flex;
     margin: 50px auto 0px;
     padding: 0 16px;
-    max-width: 900px;
+    max-width: 1200px;
     flex-direction: column;
     align-items: center;
   }
@@ -22,8 +22,8 @@
     border-radius: 4px;
     border: 1px solid #eee;
     background-color: #fafafa;
-    height: 200px;
-    width: 200px;
+    height: 13vw;
+    width: 13vw;
     margin: 0 8px 20px;
     padding: 16px;
     display: flex;
@@ -56,6 +56,21 @@
     fill: rgb(105, 103, 103);
   }
 
+  .card-img {
+    width: 100%;
+    height: auto;
+    max-width: 9vw;
+    filter: brightness(0) saturate(100%) invert(13%) sepia(74%) saturate(5004%) hue-rotate(356deg) brightness(91%) contrast(118%);
+  }
+
+  .card-title, .instructions {
+    font-size: 2vw !important;
+  }
+
+  a:hover .card-img {
+    filter: brightness(0) saturate(100%) invert(73%) sepia(12%) saturate(836%) hue-rotate(306deg) brightness(102%) contrast(115%);
+  }
+
   a,
   a:visited,
   a:hover {
@@ -65,19 +80,6 @@
 
   a:hover {
     color: #FFBBC1;
-  }
-
-  a:hover .heart-svg {
-    filter: brightness(0) saturate(100%) invert(73%) sepia(12%) saturate(836%) hue-rotate(306deg) brightness(102%) contrast(115%);
-  }
-
-  .actual-img {
-    height: 156px;
-    width: auto;
-  }
-
-  .striked {
-    text-decoration: line-through;
   }
 
   .utility-container {

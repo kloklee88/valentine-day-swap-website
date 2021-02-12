@@ -62,3 +62,13 @@
   svg.material-icons:not(:last-child) {
     margin-right: 8px;
   }
+
+  #title {
+    font-size: 2vw;
+    color: #C00000;
+    text-decoration: none; /* no underline */
+  }
+
+  #logo {
+    filter: invert(13%) sepia(74%) saturate(5004%) hue-rotate(356deg) brightness(91%) contrast(118%);
+  }

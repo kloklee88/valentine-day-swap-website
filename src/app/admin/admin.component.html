@@ -1,10 +1,18 @@
 <div class="content" role="main">
     <div class="utility-container">
         <div class="form-group">
+            <h3>Administration Page</h3>
             <label for="playerNames">Player Names (please use commas between names!)</label>
             <textarea [(ngModel)]="playerNames" id="playerNames" name="playerNames" class="players form-control"
-                cols="50" rows="5" required></textarea>
-            <button class="btn btn-danger" (click)="initialize()">Initialize</button>
+                cols="70" rows="5" required></textarea>
+            <button class="btn btn-danger" (click)="initialize()">Update Players</button>
+            <br />
+            <br />
+            <button class="btn btn-danger" (click)="shuffle()">Shuffle Sender and
+                Recipients</button>
+            <br />
+            <br />
+            <h4 *ngIf="response">{{response}}</h4>
         </div>
     </div>
 </div>

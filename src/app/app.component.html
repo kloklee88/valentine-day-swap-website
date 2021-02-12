@@ -1,7 +1,9 @@
 <!-- Toolbar -->
 <div class="toolbar" role="banner">
-  <img width="40" alt="Valentine" src="assets/img/heart-clear.png" />
-  <h2 (click)="goHome()">Valentine Day Swap 2021</h2>
+  <a [routerLink]="['/home']" id="title">
+    <img id="logo" width="40" alt="Valentine" src="assets/svg/romance.svg" />
+    <span>Valentine Day Swap 2021</span>
+  </a>
 
   <div class="spacer"></div>
   <a [routerLink]="['/admin']"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#C00000" class="bi bi-gear-fill" viewBox="0 0 16 16">

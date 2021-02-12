@@ -8,6 +8,7 @@ import { GlobalService } from '../global.service';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
+  response: string;
   playerNames: string;
 
   constructor(
@@ -22,6 +23,11 @@ export class AdminComponent implements OnInit {
       .subscribe(players => {
         this.playerNames = players.toString();
       });
+  }
+
+  shuffle() {
+    this.globalService.shufflePlayers();
+    this.response = "Player pairs have been shuffled!";
   }
 
   initialize() {
@@ -39,6 +45,7 @@ export class AdminComponent implements OnInit {
     this.globalService.deleteData().subscribe(() => {
       this.globalService.postData(playerJson).subscribe(responseData => {
         this.loadData();
+        this.response = "Players have been successfully updated!";
       });
     })
   }
