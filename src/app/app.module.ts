@@ -11,13 +11,17 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { AdminComponent } from './admin/admin.component'
 import { FormsModule } from '@angular/forms';
+import { AboutComponent } from './about/about.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ResultComponent,
     HomeComponent,
-    AdminComponent
+    AdminComponent,
+    AboutComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,
