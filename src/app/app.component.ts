@@ -18,4 +18,12 @@ export class AppComponent implements OnInit {
   goHome(): void {
     this.router.navigateByUrl('/home');
   }
+
+  poweredBy() {
+    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", '_blank');
+  }
+
+  copyright() {
+    window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", '_blank');
+  }
 }
