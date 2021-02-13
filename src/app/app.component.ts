@@ -16,6 +16,7 @@ export class AppComponent implements OnInit {
   }
 
   goHome(): void {
+    //Test
     this.router.navigateByUrl('/home');
   }
 
