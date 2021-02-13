@@ -63,8 +63,12 @@
     filter: brightness(0) saturate(100%) invert(13%) sepia(74%) saturate(5004%) hue-rotate(356deg) brightness(91%) contrast(118%);
   }
 
-  .card-title, .instructions {
+  .card-title {
     font-size: 2vw !important;
+  }
+
+  .instructions {
+    font-size: 1.5vw !important;
   }
 
   a:hover .card-img {
@@ -90,9 +94,9 @@
   }
 
   /* Responsive Styles */
-  @media screen and (max-width: 767px) {
-    .card {
-      height: 16px;
-      margin: 8px 0;
-    }
-  }
+  // @media screen and (max-width: 767px) {
+  //   .card {
+  //     height: 86px;
+  //     margin: 8px 0;
+  //   }
+  // }

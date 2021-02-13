@@ -2,13 +2,14 @@
 <div class="toolbar" role="banner">
   <a [routerLink]="['/home']" id="title">
     <img id="logo" width="40" alt="Valentine" src="assets/svg/romance.svg" />
-    <span>Valentine Day Swap 2021</span>
+    <span>Yikes Valentine Extravaganza</span>
   </a>
 
   <div class="spacer"></div>
   <div ngbDropdown class="d-inline-block">
     <span id="menu-dropdown" ngbDropdownToggle>Menu</span>
     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+      <button ngbDropdownItem [routerLink]="['/home']">Home</button>
       <button ngbDropdownItem [routerLink]="['/about']">About</button>
       <button ngbDropdownItem [routerLink]="['/schedule']">Schedule</button>
     </div>
