@@ -29,6 +29,19 @@ export class GlobalService {
         return this.http.delete('https://valentine-day-swap-default-rtdb.firebaseio.com/pairs.json')
     }
 
+    getAll() {
+        return this.getData()
+            .pipe(map(responseData => {
+                console.log(responseData);
+                const postArray = []
+                for (const key in responseData) {
+                    postArray.push(responseData[key]);
+                }
+                //console.log(postArray);
+                return postArray;
+            }))
+    }
+
     getSendersOnly() {
         return this.getData()
             .pipe(map(responseData => {

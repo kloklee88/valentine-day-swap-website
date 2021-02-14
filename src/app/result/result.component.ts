@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Globals } from '../global';
+import { GlobalService } from '../global.service';
 
 @Component({
   selector: 'app-result',
@@ -9,20 +10,26 @@ import { Globals } from '../global';
 })
 export class ResultComponent implements OnInit {
   result;
-  pairs = this.globals.pairs;
+  pairs: any;
   name: string;
 
   constructor(
-    private globals: Globals,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private globalService: GlobalService) { }
 
   ngOnInit(): void {
-    this.route.params
-      .subscribe(
-        (params: Params) => {
-          this.name = params['name'];
-        }
-      );
-    this.result = this.pairs.find(x => x.sender === this.name)
+    this.globalService.getAll().subscribe(players => {
+      console.log("HERE HELP");
+      console.log(players);
+      this.pairs = players[0];
+      console.log(this.pairs);
+      this.route.params
+        .subscribe(
+          (params: Params) => {
+            this.name = params['name'];
+          }
+        );
+      this.result = this.pairs.find(x => x.sender === this.name)
+    });
   }
 }
